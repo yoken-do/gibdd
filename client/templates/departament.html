@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title>ГИБДД - Вход в систему</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/block.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/tool.css') }}">
+</head>
+
+<body>
+
+<main>
+
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('about') }}">ГИБДД</a></li>
+            <li><a href="{{ url_for('lk') }}">Личный кабинет</a></li>
+            <li><a href="{{ url_for('transport') }}">ТС</a></li>
+            <li><a href="{{ url_for('departament') }}">Подразделения</a></li>
+            <li><a href="{{ url_for('fine') }}">Штрафы</a></li>
+            <form method="post"><input type="submit" id="out_session" value="Выйти из сессии"/></form>
+        </ul>
+    </nav>
+
+    {% for item, value in locations.items() %}
+    <div class="other-block">
+        <h3> {{ item }} </h3>
+        <p><b>Адрес: </b> {{value.address}} </p>
+        <p class="split"></p>
+        {% for service in value.services %}
+        <p><i>{{ service }}</i></p>
+        {% endfor %}
+    </div>
+    {% endfor %}
+
+</main>
+
+</body>
+
+</html>

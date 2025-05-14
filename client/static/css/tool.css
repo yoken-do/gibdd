@@ -1,0 +1,67 @@
+/* Button for close session */
+#out_session
+{
+    background: none;
+    color:var(--color);
+    border: none;
+}
+
+#out_session:hover
+{
+    cursor: pointer;
+}
+
+
+/* Menu for Navigation */
+nav
+{
+    display: flex;
+    justify-content: center;
+}
+
+nav ul
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+}
+
+nav ul > li
+{
+    margin: 5px;
+    list-style: none;
+}
+
+nav ul > li:first-child > a
+{
+    text-decoration: none;
+    color:var(--color);
+    background-color:var(--bgcolor);
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+nav ul > li > a
+{
+    text-decoration: none;
+    color:var(--bgcolor);
+    background-color:var(--color);
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+
+form
+{
+    margin:0;
+    display: flex;
+}
+
+.split
+{
+    border-bottom: 2px solid var(--color);
+    margin-top:0;
+}

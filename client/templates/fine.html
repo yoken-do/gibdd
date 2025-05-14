@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>ГИБДД - Вход в систему</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/block.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/tool.css') }}">
+</head>
+
+<body>
+
+<main>
+
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('about') }}">ГИБДД</a></li>
+            <li><a href="{{ url_for('lk') }}">Личный кабинет</a></li>
+            <li><a href="{{ url_for('transport') }}">ТС</a></li>
+            <li><a href="{{ url_for('departament') }}">Подразделения</a></li>
+            <li><a href="{{ url_for('fine') }}">Штрафы</a></li>
+            <form method="post"><input type="submit" id="out_session" value="Выйти из сессии"/></form>
+        </ul>
+    </nav>
+    {% if fine_status %}
+    <p>
+        У вас задолженность по штрафам на {{fine_sum}}
+    </p>
+    {% else %}
+    <p>У вас нет задолженностей</p>
+    {% endif %}
+    {% if room %}
+        {% for fine in room %}
+        <div class="fine-block">
+            <h3>Штраф №{{fine['numer']}}</h3>
+            <p><b>Причина:</b> {{fine['reason']}}</p>
+            <p><b>Дата выписки:</b> {{fine['date']}}</p>
+            <p><b>Сумма:</b> {{fine['sum']}}</p>
+            <p><b>Статус:</b> {{fine['status']}}</p>
+        </div>
+        {% endfor %}
+    {% endif %}    
+
+</main>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <title>ГИБДД - Вход в систему</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/sign-in.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/tool.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+
+<main>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('about') }}">ГИБДД</a></li>
+            <li><a href="{{ url_for('main') }}">Обновление ВУ</a></li>
+            <li><a href="{{ url_for('fine') }}">Обновить штрафную базу</a></li>
+            <li><a href="{{ url_for('transport') }}">Обновить базу ТС</a></li>
+        </ul>
+    </nav>
+
+    <div class="input-block">
+        <div class="sign-in">
+            <h3>Удалить ТС:</h3>
+            <form method="POST">
+                <input name="dfio" type="text" placeholder="ФИО">
+                <span></span>
+                <input name="dVIN" type="text" placeholder="VIN-номер">
+                <span>
+                    <input name="dmark" type="text" placeholder="Марка">
+                    <input name="dmodel" type="text" placeholder="Модель">
+                </span>
+                <span>
+                    <input name="dmade_date" type="date" placeholder="Дата изготовления">
+                    <input name="dcolor" type="text" placeholder="Цвет">
+                </span>
+                <input name="action" type="submit" value="Удалить ТС">
+            </form>
+        </div>
+    
+        <div class="sign-in">
+            <h3>Добавить ТС:</h3>
+            <form method="POST">
+                <input name="fio" type="text" placeholder="ФИО">
+                <span></span>
+                <input name="VIN" type="text" placeholder="VIN-номер">
+                <span>
+                    <input name="mark" type="text" placeholder="Марка">
+                    <input name="model" type="text" placeholder="Модель">
+                </span>
+                <span>
+                    <input name="made_date" type="date" placeholder="Дата изготовления">
+                    <input name="color" type="text" placeholder="Цвет">
+                </span>
+                <input name="action" type="submit" value="Добавить ТС">
+            </form>
+        </div>
+    </div>
+    {% if status %}
+        <p> {{message}}</p>
+    {% endif %}
+</main>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <title>ГИБДД - Вход в систему</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/sign-in.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/tool.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+
+<main>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('about') }}">ГИБДД</a></li>
+            <li><a href="{{ url_for('main') }}">Обновление ВУ</a></li>
+            <li><a href="{{ url_for('fine') }}">Обновить штрафную базу</a></li>
+            <li><a href="{{ url_for('transport') }}">Обновить базу ТС</a></li>
+        </ul>
+    </nav>
+
+    <div class="input-block">
+        <div class="sign-in">
+            <h3>Удалить штраф:</h3>
+            <form method="POST">
+                <input name="fio" type="text" placeholder="ФИО">
+                <span>
+                    <input name="numer" type="text" placeholder="Номер ВУ">
+                    <input name="fine_num" type="text" placeholder="Номер штрафа">
+                </span>
+                <input name="action" type="submit" value="Удалить штраф">
+            </form>
+        </div>
+    
+        <div class="sign-in">
+            <h3>Добавить штраф:</h3>
+            <form method="POST">
+                <input name="fio" type="text" placeholder="ФИО">
+                <span>
+                    <input name="numer" type="text" placeholder="Номер ВУ">
+                    <input name="fine" type="text" placeholder="Номер штрафа">
+                </span>
+                <span>
+                    <input name="reason" type="text" placeholder="Причина штрафа">
+                    <input name="sum" type="text" placeholder="Сумма штрафа">
+                </span>
+                <input name="action" type="submit" value="Добавить штраф">
+            </form>
+        </div>
+    </div>
+    {% if status %}
+        <p>{{message}}</p>
+    {% endif %}
+</main>
+
+</body>
+
+</html>

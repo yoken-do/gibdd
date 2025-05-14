@@ -1,0 +1,66 @@
+/* Data blocks */
+.block, .other-block, .fine-block, .info-block
+{
+    color: var(--color);
+    border-radius: 8px;
+    margin-top: 10px;
+    padding-left: 30px;
+}
+
+.block, .other-block
+{
+    background-color: var(--block-color);
+}
+
+.block, .fine-block, .info-block
+{
+    width: calc(100% - 60px);
+}
+
+.other-block
+{
+    width: calc(100% - 120px);
+}
+
+.info-block
+{
+    background-color: var(--color);
+    color: var(--bgcolor)
+}
+
+.fine-block
+{
+    background-color: var(--fine-color);
+}
+
+
+/* data policy block */
+.data-policy
+{
+    display: flex;
+    align-items: start;
+    max-width: 1000px;
+    flex-direction: column;
+    background-color: var(--bgcolor);
+}
+
+.data-policy > b
+{
+    line-height: 2.5;
+}
+
+.but
+{
+    background-color: var(--color);
+    color: var(--bgcolor);
+    text-decoration: none;
+}
+
+.not-found
+{
+    padding: 50px;
+}
+.not-found > h1, .not-found > p
+{
+    text-align: center;
+}

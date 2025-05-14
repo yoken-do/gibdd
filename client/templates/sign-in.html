@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title>ГИБДД - Вход в систему</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/sign-in.css') }}">
+</head>
+
+<body class="bd">
+
+<div class="reg">
+
+    <h1>ГИБДД</h1>
+    <div class="sign-in">
+        <h3>Введите данные для входа:</h3>
+        <form method="POST">
+            <input name="fio" type="text" placeholder="ФИО">
+            <span>
+                <input name="numer" type="text" placeholder="Номер ВУ">
+                <input name="birth_date" type="date" placeholder="Дата рождения">
+            </span>
+            <input name="phone" type="tel" placeholder="номер телефона" pattern="\+7\s?[0-9]{3}\s?[0-9]{3}\s?[0-9]{2}\s?[0-9]{2}">
+            <input type="submit" value="Войти">
+        </form>
+    </div>
+    <p id="privacy-text">
+        Нажимая «Войти», вы подтверждаете, что ознакомились с
+        <a href="{{ url_for('data_policy') }}">Политикой обработки пользовательских данных</a>.
+    </p>
+    <p>
+        <a href="{{ url_for('about') }}"><img src="{{ url_for('static', filename='logo.webp') }}" width="30px"></a>
+    </p>
+
+</div>
+
+</body>
+
+</html>

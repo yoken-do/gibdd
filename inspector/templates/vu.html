@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>ГИБДД - Вход в систему</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/sign-in.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/tool.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+
+<main>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('about') }}">ГИБДД</a></li>
+            <li><a href="{{ url_for('main') }}">Обновление ВУ</a></li>
+            <li><a href="{{ url_for('fine') }}">Обновить штрафную базу</a></li>
+            <li><a href="{{ url_for('transport') }}">Обновить базу ТС</a></li>
+        </ul>
+    </nav>
+    <div class="sign-in">
+        <h3>Введите необходимые данные: </h3>
+        <form method="POST">
+            <input name="fio" type="text" placeholder="ФИО">
+            <span>
+                <input name="passport_seria" type="text" placeholder="Серия паспорта">
+                <input name="passport_numer" type="text" placeholder="Номер паспорта">
+            </span>
+            <span>
+                <input name="numer" type="text" placeholder="Номер ВУ">
+                <input name="birth_date" type="date" placeholder="Дата рождения">
+            </span>
+            <input type="submit" value="Обновить ВУ">
+        </form>
+    </div>
+    {% if status %}
+        <p>Ваши права: {{ vu }}. Действительны до {{end}}</p>
+    {% endif %}
+</main>
+
+</body>
+
+</html>

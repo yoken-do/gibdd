@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>ГИБДД - Вход в систему</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/block.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/tool.css') }}">
+</head>
+
+<body>
+
+<main>
+
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('about') }}">ГИБДД</a></li>
+            <li><a href="{{ url_for('lk') }}">Личный кабинет</a></li>
+            <li><a href="{{ url_for('transport') }}">ТС</a></li>
+            <li><a href="{{ url_for('departament') }}">Подразделения</a></li>
+            <li><a href="{{ url_for('fine') }}">Штрафы</a></li>
+            <form method="post"><input type="submit" id="out_session" value="Выйти из сессии"/></form>
+        </ul>
+    </nav>
+
+    <div class="block">
+        <h3>{{room['lastname']}} {{room['name']}} {{room['fathername']}}</h3>
+        <p><b>Паспортные данные:</b> {{room['passport']}} </p>
+        <p><b>Номер телефона:</b> {{room['phone']}} </p>
+        <p><b>Дата рождения:</b> {{room['birth_date']}} </p>
+        <p><b>Место рождения:</b> {{room['birth_place']}} </p>
+        <p><b>Место проживания:</b> {{room['place']}} </p>
+        <p><b>Регион:</b> {{room['region']}} </p>
+    </div>
+    <div class="block">
+        <h3>Водительское удостоверение</h3>
+        <p><b>Номер удостоверения:</b> {{room['numer']}} </p>
+        <p><b>Место выдачи:</b> {{room['department']}} </p>
+        <p><b>Дата выдачи:</b> {{room['vu_start_date']}} </p>
+        <p><b>Дата окончания:</b> {{room['vu_end_date']}} </p>
+        <p> {{room['status']}} </p>
+    </div>
+
+</main>
+
+</body>
+
+</html>
