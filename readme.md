@@ -2,14 +2,31 @@
 
 ### How to Run:
 
+**Install packages:**
+```bash
+pip install -r requirements.txt
+# uv pip install -e
+# poetry install
+```
+
+
 **Navigate to project directories:**
 
-- For client part: `cd client`
+- For client part: 
+```bash
+cd client
+```
 
-- For inspector part: `cd inspector`
+- For inspector part: 
+```bash
+cd inspector
+```
 
 **Run the applications:**
-In each directory, execute: python `main.py`
+In each directory, execute: 
+```bash
+python main.py
+```
 
 **Access in browser:**
 - Client interface: http://localhost:5000
