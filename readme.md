@@ -2,14 +2,6 @@
 
 ### How to Run:
 
-**Install packages:**
-```bash
-pip install -r requirements.txt
-# uv pip install -e
-# poetry install
-```
-
-
 **Navigate to project directories:**
 
 - For client part: 
@@ -25,7 +17,7 @@ cd inspector
 **Run the applications:**
 In each directory, execute: 
 ```bash
-python main.py
+uv run main.py
 ```
 
 **Access in browser:**
